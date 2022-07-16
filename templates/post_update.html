@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="col-12">
+        <div class="form_create pb-5">
+            <h1 class="m-5 text-center">Update post</h1><br>
+            <form action="" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Update post" class="btn btn-warning">
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="col-12">
+    <div class="card mt-3">
+        <div class="card-body">
+            <h1 class="card-title text-center">{{ post.title }}</h1>
+            <h6>Author: {{ post.author}}</h6>
+            <h6>{{ post.created }}</h6>
+            <h5>{{ post.description | safe }}</h5>
+            <img class="post_image" src="/media/{{ post.img }}">
+            <p class="card-text">{{ post.body }}</p>
+        </div>
+        <div class="card-footer">
+            <a class="btn btn-outline-secondary" href="{% url 'post_update' post.pk %}">Update post</a>
+            <a class="btn btn-outline-danger" href="{% url 'post_delete' post.pk %}">Delete post</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

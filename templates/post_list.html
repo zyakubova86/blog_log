@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for post in object_list %}
+        <div class="col-9">
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h5>
+                    <h6>{{ post.author}}</h6>
+                    <h6>{{ post.created }}</h6>
+                    <img class="post_image" src="media/{{ post.img }}">
+                    <h6 class="mt-2">{{ post.description | safe }}</h6>
+<!--                    <p class="card-text">{{ post.body }}</p>-->
+                    <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary pereyti mt-2">Go to post</a>
+                </div>
+            </div>
+        </div>
+<!--        <div class="col-3 mt-3 bg-light">-->
+<!--            <aside >-->
+<!--                <h4 class="text-center">Recent posts</h4>-->
+<!--            </aside>-->
+<!--        </div>-->
+    {% endfor %}
+
+{% endblock content %}
+
