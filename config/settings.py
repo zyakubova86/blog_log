@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -73,12 +74,25 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dflppjiq3ebb2j',
+        'USER': 'qdbiuzztbskryw',
+        'PASSWORD': '97dba977934b4fe1f7b91cd69b0f99133844122df2d1c181e6569fc86f07fb83',
+        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
+
+db_from_env = dj_database_url.config(default='postgres://qdbiuzztbskryw:97dba977934b4fe1f7b91cd69b0f99133844122df2d1c181e6569fc86f07fb83@ec2-52-205-61-230.compute-1.amazonaws.com:5432/dflppjiq3ebb2j')
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
