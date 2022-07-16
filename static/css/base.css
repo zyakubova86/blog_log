@@ -4,7 +4,7 @@
 header h1 a {
     color: #1c7430;
 }
-img.post_image {
+.card img.post_image {
     width: 100%;
 }
 .card-body a.pereyti {
