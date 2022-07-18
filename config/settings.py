@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_database_url
+# import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-v!#a$0u2a+50ep^s-m+s7rk48k9*9yseimrkr6h8wsx9r2z@w!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['bloglog2.herokuapp.com', '127.0.0.1', ]
 
@@ -83,10 +83,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dflppjiq3ebb2j',
-        'USER': 'qdbiuzztbskryw',
-        'PASSWORD': '97dba977934b4fe1f7b91cd69b0f99133844122df2d1c181e6569fc86f07fb83',
-        'HOST': 'ec2-52-205-61-230.compute-1.amazonaws.com',
+        'NAME': 'dp63bqoeqqro1',
+        'USER': 'omdyxmbnntwlsz',
+        'PASSWORD': 'c620093a2a049950a1e14655003e31f28c47782b7cf60f9e0643b83c3ebf52be',
+        'HOST': 'ec2-44-205-41-76.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
